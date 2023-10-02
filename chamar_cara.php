@@ -26,4 +26,3 @@ try {
 } catch (Exception $e) {
     echo "Erro ao enviar a mensagem: " . $e->getMessage();
 }
-?>
