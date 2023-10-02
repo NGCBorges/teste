@@ -1,3 +1,1 @@
-[submodule "vendor/twilio/sdk"]
-    path = vendor/twilio/sdk
-    url = https://github.com/twilio/sdk.git
+
