@@ -1,0 +1,10 @@
+[
+    {
+      "ip": "177.54.146.232",
+      "port": 7784,
+      "x2": false,
+      "name": "Zona Oeste",
+      "online": 2,
+      "maxonline": 50
+    }
+]
