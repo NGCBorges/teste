@@ -1,7 +1,7 @@
 {
-    "news": [
-        {
+    "news": [{
             "id": "Zona Oeste",
             "name": "Internet",
             "image": "https://www.saofranciscodogloria.mg.leg.br/imagens/imagem_neutra_noticias.jpg"
-}]
+    }]
+}
