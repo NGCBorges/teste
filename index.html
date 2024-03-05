@@ -1,13 +1,106 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href = "style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<meta http-equiv="refresh" content="222">
+	<style type="text/css">
+		
+	
+		#Calculadora{
+			position: absolute;
+			width: 40vh;
+			height: 40vh;
+			background-color: #808080;
+			border-radius: 8px;
+			left: 50%;
+			top: 40%;
+			transform: translate(-50%, -50%);
+		}
+		#div_campos{
+			position: absolute;
+		
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 80%;
+			height: 90%;
+		}
+		#div_campos > input{
+			width: 100%;
+			outline: 0;
+			box-sizing: border-box;
+			background-color: #e5ebe7;
+			border-radius: 3px;
+			border: 1px solid black;
+		}
+		#div_campos > button{
+			outline: 0;
+			background-color: #e5ebe7;
+			border: 1px solid #e5ebe7;
+			border-radius: 3px;
+			position: absolute;
+			left: 20%;
+			top: 50%;
+			cursor: pointer;
+			transform: translate(-50%, -50%);
+
+		}
+
+	</style>
 </head>
 <body>
-  <form action="" method="" accept-charset="utf-8">
-    <label><input type="text" name="numero" value=""></label>
-    <label><input type="text" name="mensagem" value=""></label>
-    <input type="submit" name="" value="">
-  </form>
-<script src = "mensagem.js"></script>
+	<div id = "Calculadora">
+		<div id = "div_campos">
+			<input id="input_value"type="text">
+			<button id = "cliqueme">Result</button>
+		</div>
+
+	</div>
 </body>
 </html>
+<script>
+	var texto_bt = document.getElementById('input_value');
+	var submit = document.getElementById('cliqueme');
+
+	function notcalcule(str) {
+	    for (var i = 0; i < str.length; i++) {
+	        if (!(/[0-9+\-*\/\(\)\s.%()]/.test(str[i]))) {
+	            return true; 
+	        }
+	    }
+	    return false; 
+	}
+
+	submit.addEventListener('click', () => {
+	    executarCalculo();
+	});
+
+	texto_bt.addEventListener('keypress', (event) => {
+	    // Verifica se a tecla pressionada é Enter (código 13)
+	    if (event.key === 'Enter') {
+	        event.preventDefault(); // Previne o comportamento padrão do Enter (submeter o formulário)
+	        executarCalculo();
+	    }
+	});
+
+	function executarCalculo() {
+	    if (texto_bt.value === "") {
+	        window.alert('Digite algo no campo de cálculo');
+	        return;
+	    }
+
+	    if (notcalcule(texto_bt.value)) {
+	        window.alert('Você digitou algum texto inválido');
+	        return;
+	    }
+	    
+	    try {
+	        const resultado = eval(texto_bt.value);
+	        texto_bt.value = resultado;
+	    } catch (error) {
+	        window.alert('Erro ao calcular a expressão.');
+	    }
+	}
+</script>
