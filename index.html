@@ -39,17 +39,4 @@
 </body>
 </html>
 <script>
-        function registrarVisita() {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "checkserver.php", true);
-            xhr.onload = function() {
-                if (xhr.status == 200) {
-                    console.log(xhr.responseText);
-                }
-            };
-            xhr.send();
-        }
-
- 
-        registrarVisita();
 </script>
